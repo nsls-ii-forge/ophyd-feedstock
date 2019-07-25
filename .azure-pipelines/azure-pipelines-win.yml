@@ -13,11 +13,13 @@ jobs:
       win_python3.6:
         CONFIG: win_python3.6
         CONDA_BLD_PATH: D:\\bld\\
-        UPLOAD_PACKAGES: False
+        UPLOAD_PACKAGES: True
+        UPLOAD_ON_BRANCH: master
       win_python3.7:
         CONFIG: win_python3.7
         CONDA_BLD_PATH: D:\\bld\\
-        UPLOAD_PACKAGES: False
+        UPLOAD_PACKAGES: True
+        UPLOAD_ON_BRANCH: master
   steps:
     # TODO: Fast finish on azure pipelines?
     - script: |
@@ -102,3 +104,4 @@ jobs:
         upload_package .\ .\recipe .ci_support\%CONFIG%.yaml
       env:
         BINSTAR_TOKEN: $(BINSTAR_TOKEN)
+      condition: and(eq(variables['UPLOAD_PACKAGES'], 'True'), eq(variables['Build.SourceBranch'], format('refs/heads/{0}', variables['UPLOAD_ON_BRANCH'])))
