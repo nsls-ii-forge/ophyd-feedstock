@@ -1,32 +1,39 @@
 {% set version = "1.4.0rc1" %}
 
 package:
-    name: ophyd
-    version: {{ version }}
+  name: ophyd
+  version: {{ version }}
 
 source:
-    url: https://github.com/NSLS-II/ophyd/archive/v{{ version }}.tar.gz
-    fn: ophyd-v{{ version }}.tar.gz
+  url: https://github.com/NSLS-II/ophyd/archive/v{{ version }}.tar.gz
+  fn: ophyd-v{{ version }}.tar.gz
 
 build:
-    number: 0
-    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-    skip: True  # [py<36]
+  noarch: python
+  number: 1
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-    build:
-        - python
-        - pip
-    run:
-        - networkx
-        - numpy
-        - pyepics
-        - python
+  build:
+    - python
+    - pip
+  run:
+    - networkx
+    - numpy
+    - pyepics
+    - python
+    - pytest
+    - pytest-runner
 
 test:
-    imports:
-        - ophyd
+  requires:
+  - pytest
+  imports:
+  - ophyd
+  commands:
+  - pytest --pyargs ophyd.tests
 
 about:
-    home: https://github.com/bluesky/ophyd
-    license: BSD 3-Clause
+  home: https://github.com/bluesky/ophyd
+  license: BSD 3-Clause
+  summary: 'Ophyd - EPICS Client Abstractions'
