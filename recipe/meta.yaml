@@ -27,11 +27,11 @@ requirements:
 
 test:
   requires:
-  - pytest
+    - pytest
   imports:
-  - ophyd
+    - ophyd
   commands:
-  - pytest --pyargs ophyd.tests
+    - pytest --pyargs ophyd.tests
 
 about:
   home: https://github.com/bluesky/ophyd
