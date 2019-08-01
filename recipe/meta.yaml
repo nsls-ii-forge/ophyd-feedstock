@@ -1,12 +1,13 @@
+{% set name = "ophyd" %}
 {% set version = "1.4.0rc1" %}
 
 package:
-  name: ophyd
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/NSLS-II/ophyd/archive/v{{ version }}.tar.gz
-  fn: ophyd-v{{ version }}.tar.gz
+  url: https://github.com/NSLS-II/{{ name }}/archive/v{{ version }}.tar.gz
+  fn: {{ name }}-v{{ version }}.tar.gz
 
 build:
   noarch: python
@@ -22,18 +23,17 @@ requirements:
     - numpy
     - pyepics
     - python
-    - pytest
-    - pytest-runner
 
 test:
   requires:
     - pytest
+    - pyepics
   imports:
-    - ophyd
+    - {{ name }}
   commands:
-    - pytest --pyargs ophyd.tests
+    - pytest --pyargs {{ name }}.tests -k pyepics
 
 about:
-  home: https://github.com/bluesky/ophyd
+  home: https://github.com/bluesky/{{ name }}
   license: BSD 3-Clause
   summary: 'Ophyd - EPICS Client Abstractions'
