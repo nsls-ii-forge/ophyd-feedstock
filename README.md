@@ -1,7 +1,7 @@
 About ophyd
 ===========
 
-Home: https://github.com/bluesky/ophyd
+Home: https://github.com/NSLS-II/ophyd
 
 Package license: BSD 3-Clause
 
@@ -80,4 +80,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@CJ-Wright](https://github.com/CJ-Wright/)
+* [@conda-forge/event-model](https://github.com/conda-forge/event-model/)
 
