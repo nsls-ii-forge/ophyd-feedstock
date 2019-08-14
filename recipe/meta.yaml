@@ -27,15 +27,11 @@ requirements:
     - pyepics
 
 test:
-  requires:
-    - pytest
-    - databroker
-    - caproto
-    - pyepics
   imports:
     - {{ name }}
-  commands:
-    - pytest --pyargs {{ name }}.tests -k pyepics
+    - {{ name }}.utils
+    - {{ name }}.areadetector
+    - {{ name }}.sim
 
 about:
   home: https://github.com/NSLS-II/{{ name }}
