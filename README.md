@@ -1,7 +1,7 @@
 About ophyd
 ===========
 
-Home: https://github.com/NSLS-II/ophyd
+Home: https://blueskyproject.io
 
 Package license: BSD 3-Clause
 
@@ -9,7 +9,7 @@ Feedstock license: BSD 3-Clause
 
 Summary: Ophyd - EPICS Client Abstractions
 
-
+Ophyd - EPICS Client Abstractions
 
 Current build status
 ====================
@@ -80,6 +80,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@CJ-Wright](https://github.com/CJ-Wright/)
 * [@conda-forge/event-model](https://github.com/conda-forge/event-model/)
 
