@@ -1,19 +1,18 @@
 {% set name = "ophyd" %}
 {% set version = "1.3.3" %}
-{% set sha256 = "1526e5e934b4c85a9d51f822e69ac45913f308043221abd0316b922350034cbf" %}
+{% set sha256 = "48a37d1447a9af173c751d251a0867e5b1610f8ae228d48d8c14ae2017d782d7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/NSLS-II/{{ name }}/archive/v{{ version }}.tar.gz
-  fn: {{ name }}-v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -42,5 +41,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - CJ-Wright
     - conda-forge/event-model
