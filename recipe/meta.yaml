@@ -33,11 +33,14 @@ test:
     - {{ name }}.sim
 
 about:
-  home: https://github.com/bluesky/{{ name }}
+  home: https://blueskyproject.io
   license: BSD 3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: 'Ophyd - EPICS Client Abstractions'
+  description: 'Ophyd - EPICS Client Abstractions'
+  doc_url: https://blueskyproject.io/ophyd
+  dev_url: https://github.com/bluesky/ophyd
 
 extra:
   recipe-maintainers:
