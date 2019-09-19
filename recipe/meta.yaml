@@ -41,7 +41,3 @@ about:
   description: 'Ophyd - EPICS Client Abstractions'
   doc_url: https://blueskyproject.io/ophyd
   dev_url: https://github.com/bluesky/ophyd
-
-extra:
-  recipe-maintainers:
-    - conda-forge/event-model
