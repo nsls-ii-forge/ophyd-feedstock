@@ -3,7 +3,7 @@ About ophyd
 
 Home: https://blueskyproject.io
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
